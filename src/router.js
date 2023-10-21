@@ -4,6 +4,13 @@ const userController = require('./controllers/userController')
 const loginController = require('./controllers/loginController')
 const regMiddle = require('./middlewares/registerMiddleware')
 const loginMiddleware = require('./middlewares/loginMiddleware')
+const cors = require('cors')
+
+router.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT","DELETE"],
+    credentials: true
+}))
 
 // Primary Route
 router.get('/', (req,res) => {
